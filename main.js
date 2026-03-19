@@ -1,3 +1,5 @@
+// First SNACK
+
 // Create array object of bikes
 const bikes = [
   {
@@ -34,6 +36,8 @@ for (let key in bikes) {
 }
 console.log(minorWeight);
 
+// Second SNACK
+
 // Create array object of teams
 const teams = [
   {
@@ -62,17 +66,18 @@ const teams = [
     "fouls-suffered": 0
   }
 ];
+// Empty array for insert the teams whit new value
 const finalList = [];
-
+// FOR IN cycle to change value for apecific key and after push in finalList arry 
 for (let key in teams) {
   teams[key]["points-scored"] = randomNumber(1, 50);
   teams[key]["fouls-suffered"] = randomNumber(60, 100);
   finalList.push(`${teams[key].name} : ${teams[key]["fouls-suffered"]}`)
 }
-
 console.log(finalList);
 
 
+// Function declaretion 
 function randomNumber(start, end) {
   const random_number = Math.floor((Math.random() * (end - start) + start));
   return random_number;
