@@ -23,6 +23,8 @@ const bikes = [
     weight: 14
   }
 ];
+// Variables for save the key of bike with minor weight
+let minorWeightKey;
 // Variable to determinate te minor value of weight bikes
 let minorWeight = 0;
 // FOR IN cycle whit "key" like a index for all key inside array object bikes
@@ -31,10 +33,13 @@ for (let key in bikes) {
   const weightBikes = bikes[key].weight;
   // If minorWeight is 0 rappresent the first cycle and write itself with new value
   if (minorWeight === 0) {
-    minorWeight = weightBikes
-  } else if (weightBikes <= minorWeight) { minorWeight = weightBikes }
+    minorWeight = weightBikes;
+  } else if (weightBikes <= minorWeight) {
+    minorWeight = weightBikes;
+    minorWeightKey = key;
+  }
 }
-console.log(minorWeight);
+console.log(`La bicicletta meno pesante è: ${bikes[minorWeightKey].name} con un valore di ${bikes[minorWeightKey].weight}Kg`);
 
 // Second SNACK
 
@@ -72,9 +77,12 @@ const finalList = [];
 for (let key in teams) {
   teams[key]["points-scored"] = randomNumber(1, 50);
   teams[key]["fouls-suffered"] = randomNumber(60, 100);
-  finalList.push(`${teams[key].name} : ${teams[key]["fouls-suffered"]}`)
+  finalList.push(`${teams[key].name} : ${teams[key]["fouls-suffered"]}`);
 }
-console.log(finalList);
+// Print the teams array with fouls suffered
+for (let i = 0; i < finalList.length; i++) {
+  console.log(finalList[i]);
+}
 
 
 // Function declaretion 
