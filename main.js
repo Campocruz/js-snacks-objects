@@ -33,3 +33,47 @@ for (let key in bikes) {
   } else if (weightBikes <= minorWeight) { minorWeight = weightBikes }
 }
 console.log(minorWeight);
+
+// Create array object of teams
+const teams = [
+  {
+    name: 'Juve',
+    "points-scored": 0,
+    "fouls-suffered": 0
+  },
+  {
+    name: 'Milan',
+    "points-scored": 0,
+    "fouls-suffered": 0
+  },
+  {
+    name: 'Inter',
+    "points-scored": 0,
+    "fouls-suffered": 0
+  },
+  {
+    name: 'Atalanta',
+    "points-scored": 0,
+    "fouls-suffered": 0
+  },
+  {
+    name: 'Bari',
+    "points-scored": 0,
+    "fouls-suffered": 0
+  }
+];
+const finalList = [];
+
+for (let key in teams) {
+  teams[key]["points-scored"] = randomNumber(1, 50);
+  teams[key]["fouls-suffered"] = randomNumber(60, 100);
+  finalList.push(`${teams[key].name} : ${teams[key]["fouls-suffered"]}`)
+}
+
+console.log(finalList);
+
+
+function randomNumber(start, end) {
+  const random_number = Math.floor((Math.random() * (end - start) + start));
+  return random_number;
+}
